@@ -15,6 +15,11 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * HomeViewModel handles the business logic for the Home screen.
+ * It fetches data using the repository, processes it, and exposes
+ * UI states to the composable layer.
+ */
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val repository: AppRepository,

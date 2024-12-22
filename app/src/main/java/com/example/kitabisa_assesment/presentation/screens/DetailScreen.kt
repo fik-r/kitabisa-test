@@ -12,6 +12,9 @@ import androidx.navigation.NavController
 import com.example.kitabisa_assesment.presentation.view.layout.AppToolbar
 import com.example.kitabisa_assesment.presentation.view.layout.AppToolbarParams
 
+/**
+ * @param navController The navigation controller for navigating to previous screen.
+ */
 @Composable
 fun DetailScreen(navController: NavController, url: String) {
     Scaffold(

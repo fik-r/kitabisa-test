@@ -28,6 +28,11 @@ import com.example.kitabisa_assesment.presentation.view.university.model.Univers
 import com.example.kitabisa_assesment.utils.Constant.DETAIL_SCREEN
 import com.example.kitabisa_assesment.utils.UIState
 
+/**
+ * @param navController The navigation controller for navigating to the detail screen.
+ * @param viewModel The HomeViewModel instance providing the data and logic.
+ * @param placeholder A list of placeholder data for preview purposes or static display.
+ */
 @Composable
 fun HomeScreen(
     navController: NavController? = null,
@@ -58,7 +63,6 @@ fun HomeScreen(
                 .padding(paddingValues),
         ) {
             when {
-                /* this line is for preview layout */
                 placeholder != null -> UniversityList(placeholder)
                 state is UIState.Loading -> CircularProgressIndicator(Modifier.align(Alignment.Center))
                 state is UIState.Error -> Text(text = state.message)
@@ -76,6 +80,10 @@ fun HomeScreen(
     }
 }
 
+/**
+ * A Preview composable to display the HomeScreen.
+ * This is useful for quickly iterating on the UI without running the app on a device.
+ */
 @Preview(showBackground = false)
 @Composable
 fun PreviewHomeScreen() {

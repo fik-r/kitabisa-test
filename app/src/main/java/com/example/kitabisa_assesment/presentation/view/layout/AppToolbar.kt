@@ -32,6 +32,11 @@ data class AppToolbarParams(
     val onBackClick: (() -> Unit)? = null
 )
 
+/**
+ * The Toolbar composable function displays the main Toolbar for the application
+ * It will show search actions if onSearchQueryChanged is not null
+ * It will show back actions if onBackClick is not null
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppToolbar(
@@ -101,6 +106,10 @@ fun AppToolbar(
     )
 }
 
+/**
+ * A Preview composable to display the ToolbarWithBack.
+ * This is useful for quickly iterating on the UI without running the app on a device.
+ */
 @Preview(showBackground = false)
 @Composable
 fun PreviewAppToolbarWithBack() {
@@ -110,6 +119,10 @@ fun PreviewAppToolbarWithBack() {
     ))
 }
 
+/**
+ * A Preview composable to display the ToolbarWithSearch.
+ * This is useful for quickly iterating on the UI without running the app on a device.
+ */
 @Preview(showBackground = false)
 @Composable
 fun PreviewAppToolbarWithSearch() {
