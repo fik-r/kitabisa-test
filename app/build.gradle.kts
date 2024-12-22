@@ -45,6 +45,10 @@ android {
     }
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 dependencies {
     // Compose and UI
     val composeBom = platform("androidx.compose:compose-bom:2024.10.01")
@@ -83,9 +87,6 @@ dependencies {
     implementation(libs.bundles.room)
     ksp(libs.room.compiler)
 
-    // Testing
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
     // Debugging (Chucker)
@@ -97,4 +98,10 @@ dependencies {
     testImplementation(libs.mockk)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
+
+    // JUnit 5 API
+    testImplementation(libs.junit.jupiter)
+
+    // JUnit 5 Engine (Required for running tests)
+    testRuntimeOnly(libs.junit.jupiter.engine)
 }
