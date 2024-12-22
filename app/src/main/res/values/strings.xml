@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">University</string>
+    <string name="placeholder_search">Input your university name</string>
+</resources>
